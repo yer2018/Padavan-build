@@ -106,6 +106,7 @@ jobs:
         name: Padavan-packages
         path: /opt/images
     - name: Upload packages to cowtransfer
+      uses: actions/upload-artifact@master
       if: always()
       run: |
         curl -fsSL git.io/file-transfer | sh
