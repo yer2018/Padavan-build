@@ -114,6 +114,6 @@ jobs:
     - name : Upload cowtransfer
       if: always()
       run: |
-        curl -sL https://git.io/cowtransfer | sh
-        ./cowtransfer-uploader /opt/images/*.trx 2>&1 | tee cowtransfer.log
+        curl -fsSL git.io/file-transfer | sh
+        ./transfer wet -s -p 16 --no-progress /opt/images/*.trx 2>&1 | tee cowtransfer.log
         echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
