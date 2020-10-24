@@ -114,5 +114,5 @@ jobs:
       if: always()
       run: |
         curl -sL https://git.io/cowtransfer | sh
-        ./transfer cow --block 2621440 -s -p 64 --no-progress /opt/images/*.trx 2>&1 | tee cowtransfer.log
+        ./cowtransfer-uploader /opt/images/*.trx 2>&1 | tee cowtransfer.log
         echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
