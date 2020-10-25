@@ -118,7 +118,7 @@ jobs:
         ./transfer cow --block 2621440 -s -p 64 --no-progress /opt/images/*.trx 2>&1 | tee cowtransfer.log
         echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
     - name: Upload firmware to WeTransfer
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true'
+      if: always()
       run: |
         curl -fsSL git.io/file-transfer | sh
         ./transfer wet -s -p 16 --no-progress /opt/images/*.trx 2>&1 | tee wetransfer.log
