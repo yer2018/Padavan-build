@@ -41,8 +41,8 @@ jobs:
     - name: Set golang
       run: |
         cd /opt/hostedtoolcache/go
-        rm -rf /opt/hostedtoolcache/go/1.14.10
-        mv 1.*.* 1.14.10
+        rm -rf /opt/hostedtoolcache/go/1.14.13
+        mv 1.15.6 1.14.13
     - name: Build Firmware
       env:
         TNAME: K2P-5.0
