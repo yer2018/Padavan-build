@@ -39,6 +39,11 @@ jobs:
         sh dl_toolchain.sh
         mkdir -p /opt/images/
 
+    - name: Modify bulid date
+      run: |
+        cd /opt/rt-n56u/trunk
+        sed -i 's/20201015/`date +"%Y%m%d"`/g' versions.inc
+        
     - name: Build Firmware
       env:
         TNAME: RM2100
