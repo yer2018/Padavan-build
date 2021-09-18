@@ -38,11 +38,7 @@ jobs:
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
-    - name: Set golang
-      run: |
-        cd /opt/hostedtoolcache/go
-        rm -rf /opt/hostedtoolcache/go/1.14.13
-        mv 1.15.6 1.14.13
+
     - name: Build Firmware
       env:
         TNAME: RM2100
