@@ -46,7 +46,7 @@ jobs:
         
     - name: Build Firmware
       env:
-        TNAME: K2P-5.0
+        TNAME: K2P-nano
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -105,7 +105,7 @@ jobs:
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
-        sudo mv -f images/*.trx /opt/images/RM2100_`date +"%Y-%m-%d"`.trx
+        sudo mv -f images/*.trx /opt/images/K2P-nano`date +"%Y-%m-%d"`.trx
     - name : Upload packages
       uses: actions/upload-artifact@master
       if: always()
